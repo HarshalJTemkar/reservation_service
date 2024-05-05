@@ -1,3 +1,10 @@
+server:
+  port: 9502
+  
 spring:
   application:
     name: reservation_service
+  profiles:
+    active: dev
+  config:
+    import: optional:configserver:http://${CONFIG_SERVER_HOST:localhost}:9296
