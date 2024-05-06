@@ -1,5 +1,6 @@
 package harshal.temkar.reservation_service.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import org.hibernate.annotations.UuidGenerator;
@@ -16,13 +17,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "RESERVATION")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Reservation {
+public class Reservation implements Serializable {
 
 	@Id
 	@GeneratedValue
